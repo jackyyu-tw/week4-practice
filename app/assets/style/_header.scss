@@ -1,16 +1,9 @@
-a{
-    color: $white;
-    &:hover{
-        text-decoration: underline;
-    }
-}
-
 .bg-red{
     background-color:$primary;
 }
 
 .text-white{
-    color: #fff;
+    color: $white;
 }
 
 .font-ch{
@@ -22,47 +15,39 @@ a{
     justify-content: space-between;
     align-items: center;
     padding: 30px 88px;
+    @include pad{
+        padding: 30px 40px;
+    }
+    @include phone{
+        flex-direction: column;
+        padding:0;
+        img{
+            padding: 10px 0;
+        }
+    }
 }
 
 .header-menu{
     display: flex;
-}
-
-.header-menu li:not(:last-child){
-    margin-right: 64px;
-}
-
-
-@media (max-width:768px) {
-    .header{
-        padding: 30px 40px;
-    }
-    
-    .header-menu li:not(:last-child){
-        margin-right: 40px;
-    }
-}
-
-
-@media (max-width:540px){
-    .header{
-        flex-direction: column;
-        padding:0;
-    }
-    .header-menu{
+    @include phone{
         flex-wrap: wrap;
         width:100%;
     }
-    .header img{
-        padding: 10px 0;
-    }
-    .header-menu li:not(:last-child){
-        margin-right: 0;
-    }
-    .header-menu li{
-        width: 50%;
-        border:1px solid #fff;
-        text-align: center;
-        padding: 8px 0;
+    li{
+        @include phone{
+            width: 50%;
+            border:1px solid $white;
+            text-align: center;
+            padding: 8px 0;
+        }
+        &:not(:last-child){
+            margin-right: 64px; 
+            @include pad{
+                margin-right: 40px;
+            }
+            @include phone{
+                margin-right: 0; 
+            }
+        }
     }
 }

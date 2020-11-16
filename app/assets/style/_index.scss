@@ -1,20 +1,3 @@
-@mixin pad {
-    @media (max-width: 768px) {
-        @content
-    }
-}
-
-@mixin phone {
-    @media (max-width: 540px) {
-        @content
-    }
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
 .banner{
     background-image: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner.png');
     height: 840px;

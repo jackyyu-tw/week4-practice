@@ -5,5 +5,21 @@
 }
 
 a{
-	text-decoration: none;
+    text-decoration: none;
+    color: $white;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+@mixin pad {
+    @media (max-width: 768px) {
+        @content
+    }
+}
+
+@mixin phone {
+    @media (max-width: 540px) {
+        @content
+    }
 }
